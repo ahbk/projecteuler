@@ -424,13 +424,12 @@ def p030():
 def p031():
     from bisect import bisect
 
-    coins = 1,2,5,10,20,50,100,200
+    coins = 1, 2, 5, 10, 20, 50, 100, 200
     value = 200
 
     def ways(v, i):
         i = bisect(coins[:i], v) - 1
-        return ways(v-coins[i], i+1) + ways(v, i) if i > 0 else 1
-
+        return ways(v - coins[i], i + 1) + ways(v, i) if i > 0 else 1
 
     return ways(value, len(coins))
 
@@ -449,4 +448,4 @@ def p032():
     
     return sum(s)
 
-print(p032())
+print(p031())
